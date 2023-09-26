@@ -3266,7 +3266,7 @@ input[type="button"].btn-block {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-
+    
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
@@ -7473,8 +7473,8 @@ h1, h2, h3, h4, h5,
 
 .hero-wrap {
   width: 100%;
-  height: calc(100vh - 117px);
-  min-height: 700px;
+  height: calc(100vh - 187px);
+  min-height: 400px;
   position: relative; }
   .hero-wrap.hero-wrap-2 {
     height: 600px; }
@@ -7487,6 +7487,13 @@ h1, h2, h3, h4, h5,
     content: '';
     opacity: 0;
     background: #000; }
+
+    .hero-wrap-mini {
+      width: 100%;
+      height: calc(100vh - 400px);
+      min-height: 10px;
+      max-height: 150px;
+      position: relative; }
 
 .slider-text {
   color: #fff;
@@ -7741,6 +7748,21 @@ h1, h2, h3, h4, h5,
   .bg-color-5 {
     background-color: #EDF5E1; }
 
+<<<<<<< Updated upstream
+=======
+
+  .custom-button {
+    padding: 15px 30px; /* Adjust padding as needed */
+    transition: background-color 0.3s ease; /* Hover effect */
+    color: #0b2e13;
+  }
+
+.custom-button:hover {
+    background-color: #379683; /* Green color on hover */
+    color: white; /* Text color on hover */
+  }
+
+>>>>>>> Stashed changes
 .services .icon {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -7804,7 +7826,7 @@ h1, h2, h3, h4, h5,
     bottom: 0;
     content: '';
     opacity: .9;
-    background: #f86f2d; }
+    background: #5CDB95; }
   .ftco-section-3 .img {
     width: 100%; }
   .ftco-section-3 .img-2 {
@@ -9183,3 +9205,8 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    /* Contact Page */
+  .contact-info-item p strong {
+    font-weight: bold;
+  }
