@@ -7722,6 +7722,10 @@ h1, h2, h3, h4, h5,
       color: #000;
       font-size: 24px; }
 
+      .navbar .nav-item.active .nav-link.custom-green-dark {
+        color: #009900;
+      }
+
       .navbar .nav-item.active .nav-link.custom-green {
         color: #00FF00;
       }
@@ -7740,6 +7744,11 @@ h1, h2, h3, h4, h5,
   
   .bg-color-5 {
     background-color: #EDF5E1; }
+
+  .btn-4:hover {
+    box-shadow: 10px 10px 0px 0px #8EE4AF;
+    transform: translate(-3px,-3px);
+  }
 
 .services .icon {
   -webkit-border-radius: 50%;
