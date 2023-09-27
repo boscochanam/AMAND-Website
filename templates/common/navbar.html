@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light bg-color-3" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+            {% if current_page == '/' or current_page == '/support' %}
+                <img src="{{ url_for('static', filename='images/amand-logo.png') }}" alt="AMAND Logo">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/amand-logo-white.png') }}" alt="AMAND Logo (White)">
+            {% endif %}
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item {{ 'active' if request.path == '/' else '' }}">
+              <a href="{{ url_for('index') }}" class="nav-link custom-green">Home</a>
+          </li>
+          <li class="nav-item {{ 'active' if request.path == '/about' else '' }}">
+              <a href="{{ url_for('about') }}" class="nav-link custom-green">About Us</a>
+          </li>
+          <li class="nav-item {{ 'active' if request.path == '/events' else '' }}">
+              <a href="{{ url_for('events') }}" class="nav-link custom-green">Events & Activities</a>
+          </li>
+          <li class="nav-item {{ 'active' if request.path == '/publications' else '' }}">
+              <a href="{{ url_for('publications') }}" class="nav-link custom-green">Publications</a>
+          </li>
+          <li class="nav-item {{ 'active' if request.path == '/news' else '' }}">
+              <a href="{{ url_for('news') }}" class="nav-link custom-green">In The News</a>
+          </li>
+          <li class="nav-item {{ 'active' if request.path == '/membership' else '' }}">
+              <a href="{{ url_for('membership') }}" class="nav-link custom-green">Membership</a>
+          </li>
+          <li class="nav-item {{ 'active' if request.path == '/contact' else '' }}">
+              <a href="{{ url_for('contact') }}" class="nav-link custom-green">Contact Us</a>
+          </li>
+      </ul>
+      
+      </div>
+    </div>
+  </nav>
