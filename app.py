@@ -5,11 +5,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     current_page = '/'
+    print(current_page)
     return render_template('index.html', current_page=current_page)
 
 @app.route('/about')
 def about():
     current_page = '/about'
+    print(current_page)
     return render_template('about.html', current_page=current_page)
 
 @app.route('/events')
