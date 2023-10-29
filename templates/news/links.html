@@ -1,11 +1,12 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
-            <h3>News Articles:</h3>
-            <ul>
+            <h3 style="color: #333; font-size: 24px; font-weight: bold; margin-bottom: 15px;">Latest News Articles:</h3>
+            <ul style="list-style: none; padding: 0;">
                 {% for article in news_data %}
-                <li>
-                    <a style = "color: green" href="{{ article.url }}">{{ article.title }}</a> | {{ article.date }}
+                <li style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                    <a href="{{ article.url }}" style="color: green; text-decoration: none; font-size: 18px; font-weight: bold;">{{ article.title }}</a>
+                    <span style="font-size: 14px; color: #777;"> | {{ article.date }}</span>
                 </li>
                 {% endfor %}
             </ul>

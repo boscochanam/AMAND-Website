@@ -23,6 +23,22 @@ def get_news_from_mongodb():
     news_data = list(cursor) 
     return news_data
 
+def get_executives_from_mongodb():
+    client = connect_to_database()
+    db = client['AMAND']
+    collection = db['executives']
+    cursor = collection.find({})
+    executives_data = list(cursor)  # Convert cursor to a list of dictionaries
+    return executives_data
+
+def get_community_service_from_mongodb():
+    client = connect_to_database()
+    db = client['AMAND']
+    collection = db['community_service']
+    cursor = collection.find({})
+    community_service_data = list(cursor)  # Convert cursor to a list of dictionaries
+    return community_service_data
+
 if __name__ == '__main__':
 
-    print(get_news_from_mongodb())
+    print(get_community_service_from_mongodb())

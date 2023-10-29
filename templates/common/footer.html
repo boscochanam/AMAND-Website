@@ -8,7 +8,7 @@
             <h2 class="ftco-heading-2">About Us</h2>
             <p>The Association of Manipuri Diaspora (AMAND) Pune is a non-profit, non-government community organisation founded by like minded people of Manipur residing in and around Pune. The association was founded on the 11th day of September 2011.</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="https://twitter.com/amandpune"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="https://www.facebook.com/amandpuneorg/"><span class="icon-facebook"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
             </ul>
@@ -16,31 +16,23 @@
         </div>
         <div class="col-md-4">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Recent Blog</h2>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
+              <h2 class="ftco-heading-2">Recent Events</h2>
+              {% for event in event_data[:3] %} {# Limiting to the first three events #}
+              <div class="block-21 mb-4 d-flex">
+                  <a class="blog-img mr-4" style="background-image: url({{ event.url }});"></a>
+                  <div class="text">
+                      <h3 class="heading"><a href="#">{{ event.title }}</a></h3>
+                      <div class="meta">
+                          <div><a href="#"><span class="icon-calendar"></span> {{ event.date }}</a></div>
+                          <div><a href="#"><span class="icon-person"></span> {{ event.author }}</a></div>
+                          <div><a href="#"><span class="icon-chat"></span> {{ event.comments }}</a></div>
+                      </div>
+                  </div>
               </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
+              {% endfor %}
           </div>
-        </div>
+      </div>
+      
         <div class="col-md-2">
            <div class="ftco-footer-widget mb-4 ml-md-4">
             <h2 class="ftco-heading-2">Site Links</h2>
