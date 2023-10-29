@@ -14,5 +14,15 @@ def get_events_from_mongodb():
     event_data = list(cursor)  # Convert cursor to a list of dictionaries
     return event_data
 
+def get_news_from_mongodb():
+    client = connect_to_database()
+    db = client['AMAND']
+    collection = db['news']  
+    query = {}  
+    cursor = collection.find(query)
+    news_data = list(cursor) 
+    return news_data
+
 if __name__ == '__main__':
-    print(get_events_from_mongodb())
+
+    print(get_news_from_mongodb())

@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>News Articles:</h3>
+            <ul>
+                {% for article in news_data %}
+                <li>
+                    <a style = "color: green" href="{{ article.url }}">{{ article.title }}</a> | {{ article.date }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

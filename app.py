@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_from_directory, url_for
-from database import get_events_from_mongodb
+from database import get_events_from_mongodb, get_news_from_mongodb
 
 app = Flask(__name__)
 
@@ -30,7 +30,8 @@ def publications():
 @app.route('/news')
 def news():
     current_page = '/news'
-    return render_template('news.html', current_page=current_page)
+    news_data = get_news_from_mongodb()
+    return render_template('news.html', current_page=current_page, news_data=news_data)
 
 @app.route('/membership')
 def membership():
