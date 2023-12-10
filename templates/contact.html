@@ -16,55 +16,47 @@
             <h2 class="h4">Contact Information</h2>
           </div>
           <div class="w-100"></div>
-          <div class="col-md-4">
-            <p class ="font-weight-bold"><span>Address:</span> Association of Manipuri Diaspora (AMAND), Pune
-              Sana Sanggai
-              Survey No. 280, Plot No. 13
-              Shathe Vasti, Dhanori Road
-              Lohegaon, Pune 411047</p>
+            <div class="col-md-4">
+              <p class ="font-weight-bold">
+                <span>
+                  Address:
+                </span> 
+                Association of Manipuri Diaspora (AMAND), Pune
+                Sana Sanggai
+                Survey No. 280, Plot No. 13
+                Shathe Vasti, Dhanori Road
+                Lohegaon, Pune 411047
+              </p>
             </div>
-            <div class="col-md-3">
-              <p><span>Email:</span> <a href="amand.pune@amandpune.org">amand.pune@amandpune.org</a></p>
+            <div class="col-md-12">
+              <p><span>Email:</span> <br /> <a href="amand.pune@amandpune.org">amand.pune@amandpune.org</a></p>
             </div>
-            <div class="col-md-3">
-              <p><span>Website</span> <a href="www.amandpune.org">www.amandpune.org</a></p>
+            <div class="col-md-12">
+              <p><span>Website</span> <br /> <a href="www.amandpune.org">www.amandpune.org</a></p>
             </div>
           </div>
           <div class="row block-9">
             <div class="col-md-6 pr-md-5">
+              {% for executive in executives_data[:executives_data|length//2] %}
               <div class="contact-info-item">
-                <p><strong>Mr Kulabidhu Chanam</strong></p>
-                <p>President</p>
-                <p>+91 9172918116</p>
+                <p><strong>{{ executive['Name'] }}</strong></p>
+                <p>{{ executive['Title'] }}</p>
+                <p>{{ executive['Phone'] }}</p>
               </div>
-              <div class="contact-info-item">
-                <p><strong>Mr Irom Jiten</strong></p>
-                <p>Vice-President</p>
-                <p>+91 9860326218</p>
-              </div>
+              {% endfor %}
             </div>
             <div class="col-md-6">
+              {% for executive in executives_data[executives_data|length//2:] %}
               <div class="contact-info-item">
-                <p><strong>Mr L Rishikanta Meitei</strong></p>
-                <p>Gen Secretary</p>
-                <p>+91 9922429609</p>
+                <p><strong>{{ executive['Name'] }}</strong></p>
+                <p>{{ executive['Title'] }}</p>
+                <p>+91 {{ executive['Phone'] }}</p>
               </div>
-              <div class="contact-info-item">
-                <p><strong>Mr Sairem Romen</strong></p>
-                <p>Joint Secretary</p>
-                <p>+91 8787682898</p>
-              </div>
-              <div class="contact-info-item">
-                <p><strong>Dr. A. Bijeshkumar</strong></p>
-                <p>Joint Secretary – Imphal</p>
-                <p>+91 84159 23505</p>
-              </div>
-              <div class="contact-info-item">
-                <p><strong>Mr Suresh Chingtham</strong></p>
-                <p>IT & Publicity Secy</p>
-                <p>+91 7720036875</p>
-              </div>
+              {% endfor %}
             </div>
+          </div>
+          
+          
           </div>
           
       </section>
