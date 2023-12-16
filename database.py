@@ -39,6 +39,18 @@ def get_community_service_from_mongodb():
     community_service_data = list(cursor)  # Convert cursor to a list of dictionaries
     return community_service_data
 
+def get_blog_by_name(name):
+    client = connect_to_database()
+    db = client['AMAND']
+    collection = db['blogs']
+    query = {'name': name}
+    cursor = collection.find(query)
+    blog_data = list(cursor)  # Convert cursor to a list of dictionaries
+    if blog_data:
+        return blog_data[0]
+    else:
+        return None
+
 if __name__ == '__main__':
 
     print(get_community_service_from_mongodb())
