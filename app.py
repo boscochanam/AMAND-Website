@@ -3,6 +3,7 @@ from database import get_blogs_from_mongodb, get_news_from_mongodb, get_executiv
 
 
 blog_data = get_blogs_from_mongodb()
+print(blog_data[0]['images'][0]['url'])
 community_service_data = get_community_service_from_mongodb()
 executives_data = get_executives_from_mongodb()
 news_data = get_news_from_mongodb()
