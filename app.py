@@ -37,7 +37,7 @@ def create():
 @app.route('/')
 def index():
     current_page = '/'
-    return render_template('index.html', current_page=current_page, event_data=blog_data, community_service_data=community_service_data)
+    return render_template('index.html', current_page=current_page, event_data=blog_data, community_service_data=community_service_data, executives_data=executives_data)
 
 @app.route('/about')
 def about():
