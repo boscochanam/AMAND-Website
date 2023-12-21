@@ -10,9 +10,9 @@
     
     <div class="hero-wrap-mini bg-color-2" data-stellar-background-ratio="0.5">
     </div>
-    
     <section class="ftco-section-3">
       <div class ="container">
+        <a href="/events" class="" style="font-weight: bold; color: #333333;"><- Back</a>
         <h2 class="blog-h2">
           {{ title }}
         </h2>
@@ -36,7 +36,7 @@
           <div class="carousel-inner">
             {% for image in images %}
               <div class="carousel-item {% if loop.first %}active{% endif %}">
-                <img src="{{ image.url }}" alt="{{ image.alt }}" class="d-block w-100">
+                <img src="{{ image.url }}" alt="{{ image.alt }}" class="d-block w-100" style="max-height: 800px; object-fit: cover;">
                 <div class="carousel-caption">
                   <h3>{{ image.alt }}</h3>
                 </div>
@@ -52,6 +52,8 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+        
+        
         
       </div>
     </section>
