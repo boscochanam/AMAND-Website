@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, send_from_directory, url_for, jsonify
-from database import get_blogs_from_mongodb, get_news_from_mongodb, get_executives_from_mongodb, get_community_service_from_mongodb, get_blog_by_name
+from database import get_blogs_from_sql, get_news_from_sql, get_executives_from_sql, get_community_service_from_sql, get_blog_by_name
 
 
-blog_data = get_blogs_from_mongodb()
-print(blog_data[0]['images'][0]['url'])
-community_service_data = get_community_service_from_mongodb()
-executives_data = get_executives_from_mongodb()
-news_data = get_news_from_mongodb()
+blog_data = get_blogs_from_sql()
+# print(blog_data[0]['images'][0]['url'])
+community_service_data = get_community_service_from_sql()
+executives_data = get_executives_from_sql()
+news_data = get_news_from_sql()
 
 
 
