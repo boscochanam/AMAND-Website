@@ -82,5 +82,5 @@ def blog_page(page_name):
         # Render a template for a blog not found
         return render_template('blog_not_found.html')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
