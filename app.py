@@ -3,7 +3,6 @@ from database import get_blogs_from_sql, get_news_from_sql, get_executives_from_
 
 
 blog_data = get_blogs_from_sql()
-# print(blog_data[0]['images'][0]['url'])
 community_service_data = get_community_service_from_sql()
 executives_data = get_executives_from_sql()
 news_data = get_news_from_sql()
@@ -12,27 +11,26 @@ news_data = get_news_from_sql()
 
 app = Flask(__name__)
 
-def process_images(image_data):
-    if image_data:
-        image_pairs = [pair.split() for pair in image_data.split(',')]
-        images = [{"url": pair[0], "alt": pair[1] if len(pair) > 1 else ""} for pair in image_pairs]
-        return images
-    else:
-        return []
 
-@app.route('/create', methods=['GET', 'POST'])
-def create():
-    if request.method == 'POST':
-        data = {
-            "name": request.form.get('name').replace(" ", "_"),
-            "title": request.form.get('title'),
-            "content": request.form.get('content'),
-            "date": request.form.get('date'),
-            "images": process_images(request.form.get('image_data')),
-        }
-        return render_template('create.html', data=data)
-    else:
-        return render_template('create.html')
+# @app.route('/create', methods=['GET', 'POST'])
+# def create():
+#     if request.method == 'POST':
+#         data = {
+#             "name": request.form.get('name').replace(" ", "_"),
+#             "title": request.form.get('title'),
+#             "content": request.form.get('content'),
+#             "date": request.form.get('date')
+#         }
+        
+#         # Convert data into SQL query
+#         sql_query = f"INSERT INTO table_name (name, title, content, date) VALUES ('{data['name']}', '{data['title']}', '{data['content']}', '{data['date']}')"
+        
+#         # Insert data into SQL database
+#         insert_data_to_sql(sql_query)
+        
+#         return render_template('create.html', data=data)
+#     else:
+#         return render_template('create.html')
 
 @app.route('/')
 def index():

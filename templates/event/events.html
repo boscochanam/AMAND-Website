@@ -20,7 +20,7 @@
             {% for event in event_data %}
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch" style="height: 500px;">
-                    <a href="/blog/{{ event.name }}" class="block-20" style="background-image: url('{{ event.images[0].url }}');">
+                    <a href="/blog/{{ event.name }}" class="block-20" style="background-image: url('{{ event.image_urls }}');">
                     </a>
                     <div class="text p-4 d-block">
                         <h3 class="heading"><a href="/blog/{{ event.name }}">{{ event.title }} </a></h3>
@@ -47,15 +47,15 @@
             {% for service in community_service_data %}
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{ service['Image'] }}');">
+                    <a href="blog-single.html" class="block-20" style="background-image: url('{{ service['image_urls'] }}');">
                     </a>
                     <div class="text p-4 d-block">
                         <div class="meta mb-3">
                             <div><a href="#">{{ service['Date'] }}</a></div>
                             <div><a href="#">{{ service['Author'] }}</a></div>
                         </div>
-                        <h3 class="heading mt-3"><a href="#">{{ service['Title'] }}</a></h3>
-                        <p>{{ service['Description'] }}</p>
+                        <h3 class="heading mt-3"><a href="#">{{ service['title'] }}</a></h3>
+                        <p>{{ service['description'] }}</p>
                     </div>
                 </div>
             </div>

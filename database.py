@@ -53,6 +53,20 @@ def get_community_service_from_sql():
     cursor.close()
     return community_service_data
 
+def get_events_from_sql():
+    cursor = connection.cursor(dictionary=True)
+    query = """
+        SELECT events.id, events.title, events.description,
+        GROUP_CONCAT(event_images.image_url) AS image_urls
+        FROM events
+        JOIN event_images ON events.id = event_images.event_id
+        GROUP BY events.id, events.title, events.description;
+    """
+    cursor.execute(query)
+    events_data = cursor.fetchall()
+    cursor.close()
+    return events_data
+
 def get_blog_by_name(name):
     blogs = get_blogs_from_sql()
     for blog in blogs:
@@ -61,12 +75,8 @@ def get_blog_by_name(name):
     return None
 
 if __name__ == '__main__':
-    # print(get_blogs_from_sql())
-    # print(get_news_from_sql())
-    print(get_executives_from_sql())
-    executives = get_executives_from_sql()
-    for executive in executives:
-        print(executive['url'])
-    # print(get_community_service_from_sql())
-    # print(get_blog_by_name("example"))
+    print(get_community_service_from_sql())
+    community_service = get_community_service_from_sql()
+    for service in community_service:
+        print(service['title'])
     pass
